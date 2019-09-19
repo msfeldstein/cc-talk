@@ -27,8 +27,8 @@ const sketch = ({ context, width, height }) => {
       for (var y = 0; y < height; y += 100) {
         circle(x, y, 50, "#000000", true, 1.0);
         var offsetR = 50 - 20;
-        var xOff = Math.cos(time) * offsetR;
-        var yOff = Math.sin(time) * offsetR;
+        var xOff = Math.cos(time * 2 + x + y) * offsetR;
+        var yOff = Math.sin(time * 2 + x + y) * offsetR;
         circle(x + xOff, y + yOff, 20, "#FFFFFF", true, 1.0);
       }
     }
