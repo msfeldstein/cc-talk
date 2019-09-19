@@ -31,7 +31,7 @@ const sketch = ({ context, width, height }) => {
     context.fillRect(0, 0, width, height);
     context.globalAlpha = 0.1;
     for (var x = width / 2 - 600; x < width / 2 + 600; x += 50) {
-      drawBlobLine(x, time + util.random(-20, 20));
+      drawBlobLine(x, time + ((x * 5232.325235) % 100));
     }
   };
 };
