@@ -21,8 +21,8 @@ const sketch = ({ context, width, height }) => {
 
     context.translate(width / 2, height / 2);
     for (var theta = 0; theta < 2 * Math.PI; theta += Math.PI / 60) {
-      var rStart = 30;
-      var rEnd = 300;
+      var rStart = 60 + 50 * Math.cos(theta * 4 + time);
+      var rEnd = 300 + 80 * Math.sin(theta * 20 + time);
 
       var x1 = Math.cos(theta) * rStart;
       var y1 = Math.sin(theta) * rStart;
