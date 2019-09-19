@@ -16,7 +16,11 @@ const sketch = ({ context, width, height }) => {
   return ({ context, width, height, time }) => {
     context.fillStyle = "white";
     context.fillRect(0, 0, width, height);
-    circle(width / 2, height / 2, 100, "#000000");
+    for (var x = 0; x < width; x += 100) {
+      for (var y = 0; y < height; y += 100) {
+        circle(x, y, 50, "#000000");
+      }
+    }
   };
 };
 
