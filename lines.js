@@ -19,12 +19,11 @@ const sketch = ({ context }) => {
     const centerX = width / 2;
     for (var centerY = 0; centerY < height; centerY += 10) {
       line(
-        centerX + util.random(-500, 500),
+        centerX + Math.cos((centerY / height) * Math.PI * 4) * 500,
         centerY,
-        centerX + util.random(-500, 500),
+        centerX - Math.cos((centerY / height) * Math.PI * 4) * 500,
         centerY
       );
-      console.log(util.random(-50, 50));
     }
   };
 };
