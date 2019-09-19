@@ -25,7 +25,11 @@ const sketch = ({ context, width, height }) => {
     context.fillRect(0, 0, width, height);
     for (var x = 0; x < width; x += 100) {
       for (var y = 0; y < height; y += 100) {
-        circle(x, y, 50 + Math.sin(time + x + y) * 20, "#000000", false, 0.3);
+        circle(x, y, 50, "#000000", true, 1.0);
+        var offsetR = 50 - 20;
+        var xOff = Math.cos(time) * offsetR;
+        var yOff = Math.sin(time) * offsetR;
+        circle(x + xOff, y + yOff, 20, "#FFFFFF", true, 1.0);
       }
     }
   };
