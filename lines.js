@@ -15,21 +15,19 @@ const sketch = ({ context, width, height }) => {
     context.stroke();
   }
 
+  var x1 = width / 2 - 100;
+  var x2 = width / 2 + 100;
+  var y = 0;
+
   return ({ context, width, height, time }) => {
     context.fillStyle = "white";
     context.fillRect(0, 0, width, height);
 
-    context.translate(width / 2, height / 2);
-    for (var theta = 0; theta < 2 * Math.PI; theta += Math.PI / 600) {
-      var rStart = 60 + 50 * Math.cos(theta * 50 + time);
-      var rEnd = 300 + 80 * Math.sin(theta * 2 + time);
-
-      var x1 = Math.cos(theta) * rStart;
-      var y1 = Math.sin(theta) * rStart;
-      var x2 = Math.cos(theta) * rEnd;
-      var y2 = Math.sin(theta) * rEnd;
-      line(x1, y1, x2, y2);
-    }
+    line(x1, y, x2, y);
+    x1 += util.random(-3, 3);
+    x2 += util.random(-3, 3);
+    y += 1;
+    if (y > height) y = 0;
   };
 };
 
