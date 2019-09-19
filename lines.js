@@ -21,11 +21,11 @@ const sketch = ({ context, width, height }) => {
 
   return ({ context, width, height, time }) => {
     context.fillStyle = "white";
+    context.globalAlpha = 0.01;
     context.fillRect(0, 0, width, height);
     for (var x = 0; x < width; x += 100) {
       for (var y = 0; y < height; y += 100) {
         circle(x, y, 50 + Math.sin(time + x + y) * 20, "#000000", false, 0.3);
-        circle(x, y, 50 + Math.sin(-time + x + y) * 20, "#000000", true, 0.1);
       }
     }
   };
