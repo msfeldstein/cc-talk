@@ -20,7 +20,7 @@ const sketch = ({ context, width, height }) => {
     context.fillRect(0, 0, width, height);
 
     context.translate(width / 2, height / 2);
-    for (var theta = 0; theta < 2 * Math.PI; theta += Math.PI / 60) {
+    for (var theta = 0; theta < 2 * Math.PI; theta += Math.PI / 6) {
       var rStart = 60 + 50 * Math.cos(theta * 4 + time);
       var rEnd = 300 + 80 * Math.sin(theta * 20 + time);
 
