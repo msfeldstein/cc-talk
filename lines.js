@@ -1,5 +1,5 @@
 const canvasSketch = require("canvas-sketch");
-
+const util = require("./util");
 const settings = {
   dimensions: [2048, 2048]
 };
@@ -18,7 +18,13 @@ const sketch = ({ context }) => {
     context.fillRect(0, 0, width, height);
     const centerX = width / 2;
     for (var centerY = 0; centerY < height; centerY += 10) {
-      line(centerX - 100, centerY, centerX + 100, centerY);
+      line(
+        centerX + util.random(-500, 500),
+        centerY,
+        centerX + util.random(-500, 500),
+        centerY
+      );
+      console.log(util.random(-50, 50));
     }
   };
 };
