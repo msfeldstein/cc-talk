@@ -17,8 +17,9 @@ const sketch = ({ context }) => {
     context.fillStyle = "white";
     context.fillRect(0, 0, width, height);
     const centerX = width / 2;
-    const centerY = height / 2;
-    line(centerX - 100, centerY, centerX + 100, centerY);
+    for (var centerY = 0; centerY < height; centerY += 10) {
+      line(centerX - 100, centerY, centerX + 100, centerY);
+    }
   };
 };
 
