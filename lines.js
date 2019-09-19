@@ -21,7 +21,9 @@ const sketch = ({ context, width, height }) => {
 
   return ({ context, width, height, time }) => {
     context.fillStyle = "white";
+    context.globalAlpha = 0.01;
     context.fillRect(0, 0, width, height);
+    context.globalAlpha = 1;
 
     line(x1, y, x2, y);
     x1 += util.random(-3, 3);
