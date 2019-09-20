@@ -19,14 +19,16 @@ const sketch = ({ context, width, height }) => {
     }
   }
 
-  function eclipse(x, y, size, moonPhaseAmount) {
-    // Sun
-    circle(x, y, size, "white", true);
-    // Moon
-    circle(x + size * moonPhaseAmount, y, size * 0.99, "black", true);
-  }
-
   return ({ context, width, height, time }) => {
+    function eclipse(x, y, size, moonPhaseAmount) {
+      // Sun
+      context.globalCompositeOperation = "lighter";
+      circle(x, y, size, "#FF0000", true);
+      circle(x + Math.sin(time) * 5, y, size, "#00FF00", true);
+      circle(x + Math.sin(time * 1.2) * 5, y, size, "#0000FF", true);
+      // Moon
+      // circle(x + size * moonPhaseAmount, y, size * 0.99, "black", true);
+    }
     context.fillStyle = "black";
     context.fillRect(0, 0, width, height);
     const numMoons = 18;
@@ -34,7 +36,7 @@ const sketch = ({ context, width, height }) => {
       eclipse(
         width / 2 + Math.sin((i / numMoons) * 2 * Math.PI) * 350,
         height / 2 + Math.cos((i / numMoons) * 2 * Math.PI) * 350,
-        40,
+        80,
         -1 + (i / numMoons) * 2 + Math.sin(i / 10 + time)
       );
     }
