@@ -29,7 +29,15 @@ const sketch = ({ context, width, height }) => {
   return ({ context, width, height, time }) => {
     context.fillStyle = "black";
     context.fillRect(0, 0, width, height);
-    eclipse(width / 2, height / 2, 200, Math.sin(time) + 1);
+    const numMoons = 18;
+    for (var i = 0; i < numMoons; i++) {
+      eclipse(
+        width / 2 + Math.sin((i / numMoons) * 2 * Math.PI) * 350,
+        height / 2 + Math.cos((i / numMoons) * 2 * Math.PI) * 350,
+        40,
+        -1 + (i / numMoons) * 2
+      );
+    }
   };
 };
 
