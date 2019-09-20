@@ -20,25 +20,13 @@ const sketch = ({ context, width, height }) => {
   }
 
   return ({ context, width, height, time }) => {
-    context.fillStyle = "white";
-    context.globalAlpha = 0.01;
+    context.fillStyle = "black";
     context.fillRect(0, 0, width, height);
-    for (var x = 0; x < width; x += 100) {
-      for (var y = 0; y < height; y += 100) {
-        circle(
-          x,
-          y,
-          40 + 10 * Math.cos(time + x * 2 + y * 3),
-          "#000000",
-          true,
-          1.0
-        );
-        var offsetR = 50 - 20;
-        var xOff = Math.cos(time * 2 + x + y) * offsetR;
-        var yOff = Math.sin(time * 2 + x + y) * offsetR;
-        circle(x + xOff, y + yOff, 20, "#FFFFFF", true, 1.0);
-      }
-    }
+
+    // Sun
+    circle(width / 2, height / 2, 200, "white", true);
+    // Moon
+    circle(width / 2 + 10, height / 2, 200, "black", true);
   };
 };
 
