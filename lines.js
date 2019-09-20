@@ -35,7 +35,7 @@ const sketch = ({ context, width, height }) => {
         width / 2 + Math.sin((i / numMoons) * 2 * Math.PI) * 350,
         height / 2 + Math.cos((i / numMoons) * 2 * Math.PI) * 350,
         40,
-        -1 + (i / numMoons) * 2
+        -1 + (i / numMoons) * 2 + Math.sin(i / 10 + time)
       );
     }
   };
