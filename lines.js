@@ -26,11 +26,13 @@ const sketch = ({ context, width, height }) => {
     var theta = -Math.PI / 2; // up
     var x = 0;
     var y = 0;
+    var curlAmount = 0;
     for (var i = 0; i < 100; i++) {
       circle(x, y, 5 - (i / 100) * 5, "#003C28", true);
       x += Math.cos(theta) * 5;
       y += Math.sin(theta) * 5;
-      theta += 0.01;
+      theta += curlAmount;
+      curlAmount += 0.01;
     }
   };
 };
