@@ -23,8 +23,14 @@ const sketch = ({ context, width, height }) => {
     context.fillStyle = "#FCD8D9";
     context.fillRect(0, 0, width, height);
     context.translate(width / 2, height / 2);
+    var theta = -Math.PI / 2; // up
+    var x = 0;
+    var y = 0;
     for (var i = 0; i < 100; i++) {
-      circle(0, -i * 3, 5 - (i / 100) * 5, "#003C28", true);
+      circle(x, y, 5 - (i / 100) * 5, "#003C28", true);
+      x += Math.cos(theta) * 5;
+      y += Math.sin(theta) * 5;
+      theta += 0.01;
     }
   };
 };
