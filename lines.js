@@ -19,14 +19,17 @@ const sketch = ({ context, width, height }) => {
     }
   }
 
+  function eclipse(x, y, size, moonPhaseAmount) {
+    // Sun
+    circle(x, y, size, "white", true);
+    // Moon
+    circle(x + size * moonPhaseAmount, y, size, "black", true);
+  }
+
   return ({ context, width, height, time }) => {
     context.fillStyle = "black";
     context.fillRect(0, 0, width, height);
-
-    // Sun
-    circle(width / 2, height / 2, 200, "white", true);
-    // Moon
-    circle(width / 2 + 10, height / 2, 200, "black", true);
+    eclipse(width / 2, height / 2, 200, Math.sin(time) + 1);
   };
 };
 
