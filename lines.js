@@ -22,6 +22,10 @@ const sketch = ({ context, width, height }) => {
   return ({ context, width, height, time }) => {
     context.fillStyle = "#FCD8D9";
     context.fillRect(0, 0, width, height);
+    context.translate(width / 2, height / 2);
+    for (var i = 0; i < 100; i++) {
+      circle(0, -i * 3, 5 - (i / 100) * 5, "#003C28", true);
+    }
   };
 };
 
