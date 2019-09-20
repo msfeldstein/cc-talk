@@ -23,7 +23,7 @@ const sketch = ({ context, width, height }) => {
     // Sun
     circle(x, y, size, "white", true);
     // Moon
-    circle(x + size * moonPhaseAmount, y, size, "black", true);
+    circle(x + size * moonPhaseAmount, y, size * 0.99, "black", true);
   }
 
   return ({ context, width, height, time }) => {
